@@ -1,5 +1,6 @@
 require('dotenv').config();
-
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const express = require('express');
 const mongoose = require('mongoose');
 const mongoString = process.env.DATABASE_URL;
@@ -18,7 +19,11 @@ database.once('connected', () => {
 
 const app = express();
 
-app.use(express.json());
+// app.use(express.json());
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.listen(3000, () => {
     console.log(`Server connected at ${3000}`);
