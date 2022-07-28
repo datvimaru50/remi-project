@@ -24,9 +24,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use('/api', routes);
 
-app.listen(3000, () => {
+module.exports = app.listen(3000, () => {
     console.log(`Server connected at ${3000}`);
 });
-
-app.use('/api', routes);
