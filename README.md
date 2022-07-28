@@ -1,2 +1,2 @@
-# remi-project
-interview remitano project source code
+# remi-project backend
+interview remitano project: back-end api source code,
