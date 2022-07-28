@@ -58,7 +58,7 @@ describe('Videos', () => {
                 .post('/api/register')
                 .send(newUser)
                 .end((err, res) => {
-                    res.should.have.status(409);
+                    res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('success').eql(false);
                     res.body.should.have.property('err').eql('auth/register/email_existed');
@@ -97,7 +97,7 @@ describe('Videos', () => {
                 .post('/api/login')
                 .send(user)
                 .end((err, res) => {
-                    res.should.have.status(401);
+                    res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('success').eql(false);
                     res.body.should.have.property('err').eql(ERROR.EMAIL_NOT_EXISTED);
@@ -116,7 +116,7 @@ describe('Videos', () => {
                 .post('/api/login')
                 .send(user)
                 .end((err, res) => {
-                    res.should.have.status(401);
+                    res.should.have.status(200);
                     res.body.should.be.a('object');
                     res.body.should.have.property('success').eql(false);
                     res.body.should.have.property('err').eql(ERROR.PASSWORD_NOT_MATCHED);

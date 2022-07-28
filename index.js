@@ -19,8 +19,6 @@ database.once('connected', () => {
 
 const app = express();
 
-// app.use(express.json());
-
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

@@ -26,7 +26,7 @@ router.post("/register", (req, res) => {
         .catch((err) => {
             switch (err.message) {
                 case ERROR.EMAIL_EXISTED:
-                    res.status(409).json({ success: false, err: ERROR.EMAIL_EXISTED });
+                    res.json({ success: false, err: ERROR.EMAIL_EXISTED });
                     break;
                 default:
                     res.status(500).json({ success: false, err: ERROR.INTERNAL_ERROR });
@@ -42,13 +42,14 @@ router.post("/login", (req, res) => {
             const token = generateJWT(user);
             const session = generateSession(user);
             res.json({
+                success: true,
                 user: user,
                 token: token,
                 session: session,
             });
         })
         .catch((err) => {
-            res.status(401).json({ success: false, err: err.message });
+            res.json({ success: false, err: err.message });
         });
 });
 
