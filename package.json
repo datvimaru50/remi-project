@@ -1,0 +1,23 @@
+{
+  "name": "remi-backend",
+  "version": "1.0.0",
+  "description": "backend api for project remi interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datvimaru50/remi-project.git"
+  },
+  "keywords": [
+    "express",
+    "mongoose"
+  ],
+  "author": "datvq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datvimaru50/remi-project/issues"
+  },
+  "homepage": "https://github.com/datvimaru50/remi-project#readme"
+}
