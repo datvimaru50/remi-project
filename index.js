@@ -24,6 +24,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api', routes);
 
-module.exports = app.listen(3000, () => {
-    console.log(`Server connected at ${3000}`);
+module.exports = app.listen(process.env.PORT, () => {
+    console.log(`Server connected at ${process.env.PORT}`);
 });
